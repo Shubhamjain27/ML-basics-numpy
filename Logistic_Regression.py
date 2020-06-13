@@ -43,7 +43,9 @@ def forward_propogation(X,Y,W):
     error = Y*np.log(activation) + (1-Y)np.log(1-activation)
     
     loss = (-1 / m)*sum(error)
-    
+
+
+    #derivate is computed using chain rule. 
     gradient = (1/m)*np.dot(X.T, activation-Y) # (7,10) X (10X1) = (7,1) - Same as W.shape
     
     return loss, gradient
